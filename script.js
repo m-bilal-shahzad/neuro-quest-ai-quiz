@@ -1,7 +1,9 @@
 console.log("NeuroQuest");
 
 // ---- CONSTANTS / DOM REFERENCES ----
+
 // API KEY
+
 // Paste your API Key here!
 const API_KEY = "YOUR_API_KEY";
 
