@@ -1,5 +1,5 @@
 console.log("NeuroQuest");
-import { API_KEY } from "./api-key.js";
+// import { API_KEY } from "./api-key.js";
 
 // ---- CONSTANTS / DOM REFERENCES ----
 // API KEY
