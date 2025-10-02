@@ -1,11 +1,12 @@
 console.log("NeuroQuest");
+import { API_KEY } from "./api-key.js";
 
 // ---- CONSTANTS / DOM REFERENCES ----
 
 // API KEY
 
 // Paste your API Key here!
-const API_KEY = "YOUR_API_KEY";
+// const API_KEY = "YOUR_API_KEY";
 
 // API Url to Fetch Quiz Data
 const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${API_KEY}`;
