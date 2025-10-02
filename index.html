@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NeuroQuest - AI-Powered Quiz Website to Test your Computer Science Knowledge. Choose Topics, Difficulty, and Number of Questions, and Challenge Yourself!"
+    />
+    <!-- Favicon for browser tab -->
+    <link rel="shortcut icon" href="images/icon.png" type="image/x-icon" />
+    <!-- Website Title -->
+    <title>NeuroQuest - AI-Powered Quiz Site</title>
+
+    <!-- Linking CSS for Styles -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- For Icons from Google Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@24,400,1,0"
+    />
+  </head>
+  <body>
+    <section class="quiz-main-section">
+      <!-- Info Div (For Notifications / Alerts) -->
+      <div class="info-div"></div>
+
+      <!-- Toggle Modes -->
+      <div class="toggle-mode">
+        <span class="material-symbols-sharp mode-icon"> brightness_3 </span>
+        <span class="material-symbols-sharp toggle-btn"> toggle_off </span>
+      </div>
+
+      <!-- Quiz Instruction Container (Before Quiz Starts) -->
+      <div class="quiz-instructions-container">
+        <h2 class="quiz-heading">Welcome to NeuroQuest</h2>
+        <h2 class="quiz-instruction-heading">Quiz Instructions</h2>
+        <!-- Step-By-Step Instructions for the User -->
+        <ul class="quiz-instructions-list"></ul>
+        <button class="btn start-your-journey">Start Your Journey</button>
+      </div>
+
+      <!-- Quiz Title + Tagline  -->
+      <div class="quiz-title-container">
+        <h2 class="quiz-title">
+          <img src="images/icon.png" alt="quiz-icon" class="quiz-icon" />
+          <span class="quiz-heading">NeuroQuest</span>
+        </h2>
+        <h6 class="quiz-tagline">
+          <p>Challenge Your Mind with AI-Powered Quizzes</p>
+          <p>Your Smart Journey to Master CS Skills</p>
+        </h6>
+      </div>
+
+      <!-- Quiz Loading Container(When Data is on Way) -->
+      <div class="quiz-loading-container">
+        <span class="loading-text"
+          >Sharpening the questions for your brain workout</span
+        >
+        <span class="loading-dots"
+          ><span></span><span></span><span></span
+        ></span>
+      </div>
+
+      <!-- Quiz Wrapper -->
+      <div class="quiz-wrapper">
+        <!-- Quiz Configuration Container -->
+        <div class="quiz-configuration">
+          <h4 class="quiz-configuration-heading">Quiz Configuration</h4>
+
+          <!-- User Preferances on Selecting Topic and Difficulty Level -->
+          <div class="user-choices">
+            <!-- Subject Container -->
+            <div class="subject-container">
+              <div class="subject-title-container">
+                <h5 class="common-headings">Computer Science</h5>
+                <span class="arrow-down topic-dropdown material-symbols-sharp">
+                  arrow_drop_down
+                </span>
+              </div>
+
+              <!-- Topics Dropdown -->
+              <ul class="languages-dropdown"></ul>
+            </div>
+
+            <!-- Topics Container -->
+            <div class="level-container">
+              <div class="levels-title-container">
+                <h5 class="common-headings">Level</h5>
+                <span class="arrow-down level-dropdown material-symbols-sharp">
+                  arrow_drop_down
+                </span>
+              </div>
+
+              <!-- Levels Dropdown -->
+              <ul class="levels-dropdown"></ul>
+            </div>
+          </div>
+
+          <!-- Questions Input Container -->
+          <div class="questions-input">
+            <h4 class="questions-input-heading">Select Number of Questions</h4>
+            <div class="questions-input-container">
+              <div class="action-buttons">
+                <span class="material-symbols-sharp minus-btn action-btn">
+                  remove
+                </span>
+
+                <input
+                  name="question-number"
+                  type="number"
+                  class="question-input no-change"
+                  value="0"
+                  min="1"
+                  max="30"
+                />
+
+                <span class="material-symbols-sharp add-btn action-btn">
+                  add
+                </span>
+              </div>
+              <button class="btn submit-questions-btn">Add</button>
+            </div>
+          </div>
+          <!-- Start Quiz Button -->
+          <button class="btn start-quiz-btn">Start Quiz</button>
+        </div>
+
+        <!-- Quiz Main Container -->
+        <div class="quiz-main-container">
+          <!-- Quiz Topic, Level and Timer -->
+          <header class="quiz-header">
+            <!-- Quiz Selected Preferences by User -->
+            <div class="selected-user-preferences">
+              <h6 class="quiz-selected-topic">
+                Topic: <span class="topic-text"></span>
+              </h6>
+              <h6 class="quiz-selected-level">
+                Level: <span class="level-text"></span>
+              </h6>
+            </div>
+
+            <!-- Quiz Timer Container-->
+            <div class="quiz-timer">
+              <span class="material-symbols-sharp timer-icon"> timer </span>
+              <h6 class="quiz-timer-text">
+                Time Remaining: <span class="quiz-time"></span>
+              </h6>
+            </div>
+          </header>
+
+          <!-- Quiz Questions + Answers Options -->
+          <div class="quiz-main-data"></div>
+
+          <!-- Questions Number & Next Question Button -->
+          <div class="quiz-footer">
+            <!-- Questions Count like 1 out of 10 -->
+            <h6 class="question-count"></h6>
+
+            <!-- Next + Submit Buttons -->
+            <div class="action-btns">
+              <div class="btn next-question-btn">Next</div>
+              <div class="btn submit-quiz-btn">Submit</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Quiz Result Container -->
+        <div class="quiz-result">
+          <img
+            src="images/quiz-over.png"
+            alt="Quiz Completed Illustration"
+            class="result-img"
+            loading="lazy"
+          />
+          <!-- Result Data -->
+          <div class="result-info">
+            <!-- Result Title -->
+            <h2 class="result-title">Quiz Completed!</h2>
+            <p class="result-message">
+              You have answered <span class="correct-answers"></span> out of
+              <span class="total-questions"></span> questions correctly.
+            </p>
+          </div>
+
+          <!-- Try Again Btn -->
+          <button class="btn try-again-btn">Try Again</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linking JS for Scripting  -->
+    <!-- JavaScript is required to use this quiz app. Please enable it in your browser. -->
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
